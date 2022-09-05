@@ -5,7 +5,7 @@ server: shiny
 ---
 
 :::{.callout-note}
-Last updated to include games through: `September 3, 2022`.
+Last updated to include games through: `September 4, 2022`.
 :::
 
 ```{r}
@@ -17,111 +17,150 @@ library(scales)
 library(stringr)
 library(tidyverse)
 
-# load data 
+# load data
 fgs_clean <- read.csv('fgs_clean.csv')
 team_info <- readRDS("team_info.RDS")
 
 # build pbp
-fgs <- fgs_clean %>% 
-       mutate(Result = case_when(
-         play_type == "Blocked Field Goal" ~ "Blocked",
-         play_type == "Field Goal Missed" ~ "Missed",
-         play_type == "Field Goal Good" ~ "Good",
-         play_type == "Blocked Field Goal Touchdown" ~ "Blocked",
-         TRUE ~ NA_character_), 
-       Time = paste(sprintf('%02d', clock.minutes), ":", sprintf('%02d', clock.seconds), sep = ""),
-       `Pr` = scales::percent(fg_make_prob, accuracy = 0.1L), WPA = format(round(wpa, 2), nsmall = 2), EPA = format(round(EPA, 2), nsmall = 2), 
-       Offense = paste(pos_team, pos_team_score), Defense = paste(def_pos_team, def_pos_team_score)) %>%
-       rename(Score = Offense, Yds = yds_fg, QRT = period, Down = down, `Dist.` = distance, YTG = yards_to_goal) %>%        
-       select(Week, Score, Defense, Down, `Dist.`, YTG, QRT, Time, Result, Yds, `Pr`, WPA, EPA) %>% 
-       arrange(-Week)
+fgs <- fgs_clean %>%
+  mutate(
+    Result = case_when(
+      play_type == "Blocked Field Goal" ~ "Blocked",
+      play_type == "Field Goal Missed" ~ "Missed",
+      play_type == "Field Goal Good" ~ "Good",
+      play_type == "Blocked Field Goal Touchdown" ~ "Blocked",
+      TRUE ~ play_type
+    ),
+    Time = paste(
+      sprintf('%02d', clock.minutes),
+      ":",
+      sprintf('%02d', clock.seconds),
+      sep = ""
+    ),
+    `Pr` = scales::percent(fg_make_prob, accuracy = 0.1L),
+    WPA = format(round(wpa, 2), nsmall = 2),
+    EPA = format(round(EPA, 2), nsmall = 2),
+    Offense = paste(pos_team, pos_team_score),
+    Defense = paste(def_pos_team, def_pos_team_score)
+  ) %>%
+  rename(
+    Score = Offense,
+    Yds = yds_fg,
+    QRT = period,
+    Down = down,
+    `Dist.` = distance,
+    YTG = yards_to_goal
+  ) %>%
+  select(Week,
+         Score,
+         Defense,
+         Down,
+         `Dist.`,
+         YTG,
+         QRT,
+         Time,
+         Result,
+         Yds,
+         `Pr`,
+         WPA,
+         EPA) %>%
+  arrange(-Week)
 
 # fix kicker player name for leaderboard
 fgs_lb <- fgs_clean %>%
-          mutate(kicker_player_name = case_when(
-          str_detect(kicker_player_name,'M. Suarez')~'Morgan Suarez',
-          TRUE~kicker_player_name
-          )) 
- 
+  mutate(kicker_player_name = case_when(
+    str_detect(kicker_player_name, 'M. Suarez') ~ 'Morgan Suarez',
+    TRUE ~ kicker_player_name
+  ))
+
 # clutch kicks
-fgs_clutch <- fgs_lb %>% 
-            mutate(diff = pos_team_score - def_pos_team_score) %>% 
-            filter((period == 4 | period == 5) & clock.minutes <= 2 & (diff > -4 & diff < 4)) %>%
-            group_by(kicker_player_name, pos_team) %>% 
-            summarise(Clutch =  paste(sum(fgm), "-", sum(fga), sep=""))
+fgs_clutch <- fgs_lb %>%
+  mutate(diff = pos_team_score - def_pos_team_score) %>%
+  filter((period == 4 |
+            period == 5) & clock.minutes <= 2 & (diff > -4 & diff < 4)) %>%
+  group_by(kicker_player_name, pos_team) %>%
+  summarise(Clutch =  paste(sum(fgm), "-", sum(fga), sep = ""))
 
-# group by player and show leaderboard 
-by_kicker <- fgs_lb %>% 
-                group_by(kicker_player_name, pos_team) %>% 
-                summarise(FGM = sum(fgm), 
-                          FGA = sum(fga),
-                          `FG%` = scales::percent(FGM/FGA, accuracy = 0.1L),
-                          `Pts/A` = format(round(sum(pts_scored)/ FGA), nsmall = 1),
-                          `Yds/A` = format(round(sum(yds_fg) / FGA), nsmall = 1))
+# group by player and show leaderboard
+by_kicker <- fgs_lb %>%
+  group_by(kicker_player_name, pos_team) %>%
+  summarise(
+    FGM = sum(fgm),
+    FGA = sum(fga),
+    `FG%` = scales::percent(FGM / FGA, accuracy = 0.1L),
+    `Pts/A` = format(round(sum(pts_scored) / FGA), nsmall = 1),
+    `Yds/A` = format(round(sum(yds_fg) / FGA), nsmall = 1)
+  )
 
-# list and join data 
+# list and join data
 fg_list <- list(by_kicker, fgs_clutch)
 
-#merge all data and generate main table 
-main <- fg_list %>% 
-        reduce(full_join, by='kicker_player_name') %>% 
-        replace(is.na(.), "0-0")  %>%
-        select(kicker_player_name, pos_team.x, FGM, FGA, `FG%`, `Pts/A`, `Yds/A`, Clutch)
+#merge all data and generate main table
+main <- fg_list %>%
+  reduce(full_join, by = 'kicker_player_name') %>%
+  replace(is.na(.), "0-0")  %>%
+  select(kicker_player_name,
+         pos_team.x,
+         FGM,
+         FGA,
+         `FG%`,
+         `Pts/A`,
+         `Yds/A`,
+         Clutch)
 
-# add team info 
-  team_info <- team_info %>%
-    mutate(logo = purrr::map(logos,magrittr::extract2,1),
-           logo = as.character(logo))
+# add team info
+team_info <- team_info %>%
+  mutate(logo = purrr::map(logos, magrittr::extract2, 1),
+         logo = as.character(logo))
 
-main <- main %>% inner_join(team_info, by = c("pos_team.x" = "school"))
+main <-
+  main %>% inner_join(team_info, by = c("pos_team.x" = "school"))
 
-final <- main %>% 
-        rename(Player = kicker_player_name, TT = pos_team.x, Team = logo) %>%
-        select(Team, Player, TT, FGM, FGA, `FG%`, `Pts/A`, `Yds/A`, Clutch) %>%
-        arrange(-FGA) 
+final <- main %>%
+  rename(Player = kicker_player_name, TT = pos_team.x, Team = logo) %>%
+  select(Team, Player, TT, FGM, FGA, `FG%`, `Pts/A`, `Yds/A`, Clutch) %>%
+  arrange(-FGA)
 ```
 
 ::: {.panel-tabset}
 
 ### Play-by-play
 ```{r}
+fluidPage(fluidRow(
+  column(4,
+         selectInput('wk', 'Week', c("All", unique((fgs$Week)
+         )), multiple = FALSE),),
+  column(4,
+         sliderInput(
+           "fg_yds",
+           "FG Length",
+           min = 10,
+           max = 70,
+           value = c(10, 70)
+         )),
+  column(4,
+         selectInput(
+           'result', 'Result', c("All", unique((fgs$Result))), multiple = FALSE
+         ),)
+),
+fluidRow(column(
+  12,
+  reactable::reactableOutput("pbptable")
+)))
 
-fluidPage(
-  fluidRow(
-    column(4,
-      selectInput('wk', 'Week', c("All", unique((fgs$Week))), multiple = FALSE),
-    ),
-    column(4, 
-    sliderInput("fg_yds", "FG Length",
-                  min = 10,
-                  max = 70,
-                  value = c(10, 70))
-    ),
-    column(4,
-      selectInput('result', 'Result', c("All", unique((fgs$Result))), multiple = FALSE),
-    )
-  ),
-          fluidRow(
-          column(12, 
-          reactable::reactableOutput("pbptable")
-          )
-          )
-)
 ```
 ### Leaderboard
 ```{r}
 fluidPage(
   fluidRow(
     column(4,
-      selectizeInput('school', 'School', c("All", unique((final$TT))), multiple = FALSE),
-    )
-        ),
-          fluidRow(
-          column(12, 
-          reactable::reactableOutput("lbtable")
-          )
-          )
-)
+      selectizeInput('school', 'School', c("All", unique((final$TT)
+      )), multiple = FALSE),
+)),
+fluidRow(column(
+  12,
+  reactable::reactableOutput("lbtable")
+)))
 ```
 
 ### About
@@ -142,7 +181,7 @@ A few beliefs about field goals:
 -   `YTG`: yards to goal (end zone)
 -   `Pts/A`: points per field goal attempt
 -   `Yds/A`: yards per field goal attempt
--   `Clutch`: defined as any field goal attempt in the 4th quarter or overttime with under two minutes remaining that could tie the game or take the lead.
+-   `Clutch`: defined as any field goal attempt in the 4th quarter or overtime with under two minutes remaining that could tie the game or take the lead.
 
 
 #### What this project includes: 
@@ -166,78 +205,82 @@ Built by [Chris Gallo](https://hellogallo.com) using [quarto](https://quarto.org
 
 ```{r}
 #| context: server
-output$pbptable <- reactable::renderReactable(   { 
-    datafgs <- fgs 
-      if (!is.null(input$fg_yds)) {
-      datafgs <- datafgs[datafgs$Yds >= input$fg_yds[1] &
-                   datafgs$Yds <= input$fg_yds[2],]
-    }
-
-    if (input$wk != "All") {
-      datafgs <- datafgs[datafgs$Week == input$wk,]
-    }
-
-    if (input$result != "All") {
-      datafgs <- datafgs[datafgs$Result == input$result,]
-    }
-
-    reactable(datafgs, searchable = TRUE, showPageSizeOptions = TRUE, 
-    striped = TRUE, highlight = TRUE, style = list(fontSize = '11px'),
-     defaultColDef = colDef(
-    maxWidth = 60,
-  ),
-      columns = list(
-        Score = colDef(
-        maxWidth = 140,
-        # Show species under character names
-        cell = function(value, index) {
-        Defense <- fgs$Defense[index]
-        div(
-          div(style = "font-weight: 600", value),
-          div(style = "font-size: 11px", Defense)
-        )
-      }
-    ),
-    Defense = colDef(show = FALSE)
-  )
-  )
+output$pbptable <- reactable::renderReactable({
+  datafgs <- fgs
+  if (!is.null(input$fg_yds)) {
+    datafgs <- datafgs[datafgs$Yds >= input$fg_yds[1] &
+                         datafgs$Yds <= input$fg_yds[2], ]
   }
-)
+  
+  if (input$wk != "All") {
+    datafgs <- datafgs[datafgs$Week == input$wk, ]
+  }
+  
+  if (input$result != "All") {
+    datafgs <- datafgs[datafgs$Result == input$result, ]
+  }
+  
+  # remove nas
+  datafgs = na.omit(datafgs)
+  reactable(
+    datafgs,
+    searchable = TRUE,
+    showPageSizeOptions = TRUE,
+    striped = TRUE,
+    highlight = TRUE,
+    rownames = FALSE,
+    style = list(fontSize = '11px'),
+    defaultColDef = colDef(maxWidth = 60,),
+    columns = list(
+      Score = colDef(
+        maxWidth = 140,
+        # show score with defense under kicking team
+        cell = function(value, index) {
+          Defense <- datafgs$Defense[index]
+          div(div(style = "font-weight: 600", value),
+              div(style = "font-size: 11px", Defense))
+        }
+      ),
+      Defense = colDef(show = FALSE)
+    )
+  )
+})
 
-output$lbtable <- reactable::renderReactable( { 
-    datalb <- final 
-
-    if (input$school != "All") {
-      datalb <- datalb[datalb$TT == input$school,]
-    }
-
-    reactable(datalb, searchable = FALSE, showPageSizeOptions = TRUE, 
-    striped = TRUE, highlight = TRUE,
-     defaultColDef = colDef(
-    maxWidth = 70,
-  ),
-      columns = list(
-        Player = colDef(
+output$lbtable <- reactable::renderReactable({
+  datalb <- final
+  
+  if (input$school != "All") {
+    datalb <- datalb[datalb$TT == input$school, ]
+  }
+  
+  reactable(
+    datalb,
+    searchable = FALSE,
+    showPageSizeOptions = TRUE,
+    striped = TRUE,
+    highlight = TRUE,
+    defaultColDef = colDef(maxWidth = 70,),
+    columns = list(
+      Player = colDef(
         maxWidth = 135,
         cell = function(value, index) {
-        TT <- datalb$TT[index]
-        div(
-          div(style = "font-weight: 600", value),
-          div(style = "font-size: 0.75rem", TT)
-        )
-      }
-    ),
-    TT = colDef(show = FALSE),
-    Team = colDef(cell = function(value) {
-      image <- img(src = value, style = "height: 24px;", alt = value)
-      tagList(
-        div(style = "display: inline-block; width: 45px;", image),
-        name = "",
+          TT <- datalb$TT[index]
+          div(div(style = "font-weight: 600", value),
+              div(style = "font-size: 0.75rem", TT))
+        }
+      ),
+      TT = colDef(show = FALSE),
+      Team = colDef(
+        cell = function(value) {
+          image <- img(src = value,
+                       style = "height: 24px;",
+                       alt = value)
+          tagList(div(style = "display: inline-block; width: 45px;", image),
+                  name = "",)
+        }
       )
-    })
+    )
   )
-  )
-    }
-)
+})
 ```
 
