@@ -5,7 +5,7 @@ server: shiny
 ---
 
 :::{.callout-note}
-Last updated to include games through: `September 4, 2022`.
+Last updated to include games through: `September 5, 2022`.
 :::
 
 ```{r}
@@ -20,6 +20,7 @@ library(tidyverse)
 # load data
 fgs_clean <- read.csv('fgs_clean.csv')
 team_info <- readRDS("team_info.RDS")
+xp_player <- read.csv('ck_xp.csv')
 
 # build pbp
 fgs <- fgs_clean %>%
@@ -79,7 +80,7 @@ fgs_clutch <- fgs_lb %>%
   filter((period == 4 |
             period == 5) & clock.minutes <= 2 & (diff > -4 & diff < 4)) %>%
   group_by(kicker_player_name, pos_team) %>%
-  summarise(Clutch =  paste(sum(fgm), "-", sum(fga), sep = ""))
+  summarise(CFGM =  sum(fgm), CFGA = sum(fga))
 
 # group by player and show leaderboard
 by_kicker <- fgs_lb %>%
@@ -87,42 +88,56 @@ by_kicker <- fgs_lb %>%
   summarise(
     FGM = sum(fgm),
     FGA = sum(fga),
-    `FG%` = scales::percent(FGM / FGA, accuracy = 0.1L),
-    `Pts/A` = format(round(sum(pts_scored) / FGA), nsmall = 1),
-    `Yds/A` = format(round(sum(yds_fg) / FGA), nsmall = 1)
-  )
+    Yds = sum(yds_fg))
 
 # list and join data
-fg_list <- list(by_kicker, fgs_clutch)
-
-#merge all data and generate main table
-main <- fg_list %>%
-  reduce(full_join, by = 'kicker_player_name') %>%
-  replace(is.na(.), "0-0")  %>%
-  select(kicker_player_name,
-         pos_team.x,
-         FGM,
-         FGA,
-         `FG%`,
-         `Pts/A`,
-         `Yds/A`,
-         Clutch)
+fg_list <- list(by_kicker, fgs_clutch, xp_player) %>%
+            reduce(full_join, by = 'kicker_player_name') %>%
+            mutate(pos_team.x = if_else(is.na(pos_team.x), pos_team, pos_team.x)) %>%
+           select(kicker_player_name,
+                  pos_team.x,
+                  FGM,
+                  FGA,
+                  Yds,
+                  CFGM, 
+                  CFGA,
+                  kicking_xpa,
+                  kicking_xpm) %>%
+            replace(is.na(.), 0) 
 
 # add team info
 team_info <- team_info %>%
   mutate(logo = purrr::map(logos, magrittr::extract2, 1),
          logo = as.character(logo))
 
-main <-
-  main %>% inner_join(team_info, by = c("pos_team.x" = "school"))
-
+# combine team info with list 
+main <- fg_list %>% 
+        inner_join(team_info, by = c("pos_team.x" = "school")) 
+        
 final <- main %>%
-  rename(Player = kicker_player_name, TT = pos_team.x, Team = logo) %>%
-  select(Team, Player, TT, FGM, FGA, `FG%`, `Pts/A`, `Yds/A`, Clutch) %>%
-  arrange(-FGA)
+         rename(Player = kicker_player_name, TT = pos_team.x, Team = logo, XPA = kicking_xpa, XPM = kicking_xpm ) %>%
+         mutate(`FG%` = if_else(FGA == 0, scales::percent(0), scales::percent(FGM / FGA, accuracy = 0.1L)), 
+         `Yds/A` = if_else(FGA == 0, format(round(0)), format(round(Yds / FGA), nsmall = 1))) %>%
+         select(Team, Player, TT, FGM, FGA, `FG%`, `Yds/A`, CFGM, CFGA, XPM, XPA) %>%
+         arrange(-FGA)
 ```
 
 ::: {.panel-tabset}
+
+### Leaderboard
+```{r}
+fluidPage(
+  fluidRow(
+    column(4,
+      selectizeInput('school', 'School', c("All", unique((final$TT)
+      )), multiple = FALSE),
+)),
+fluidRow(column(
+  12,
+  reactable::reactableOutput("lbtable")
+)))
+```
+
 
 ### Play-by-play
 ```{r}
@@ -147,20 +162,6 @@ fluidRow(column(
   12,
   reactable::reactableOutput("pbptable")
 )))
-
-```
-### Leaderboard
-```{r}
-fluidPage(
-  fluidRow(
-    column(4,
-      selectizeInput('school', 'School', c("All", unique((final$TT)
-      )), multiple = FALSE),
-)),
-fluidRow(column(
-  12,
-  reactable::reactableOutput("lbtable")
-)))
 ```
 
 ### About
@@ -179,9 +180,11 @@ A few beliefs about field goals:
 -   `WPA`: win probability added
 -   `EPA`: expected points added
 -   `YTG`: yards to goal (end zone)
--   `Pts/A`: points per field goal attempt
 -   `Yds/A`: yards per field goal attempt
--   `Clutch`: defined as any field goal attempt in the 4th quarter or overtime with under two minutes remaining that could tie the game or take the lead.
+-   `CFGM`: made **clutch** field goal defined as any field goal made in the 4th quarter or overtime with under two minutes remaining that could tie the game or take the lead.
+-   `CFGM`: attempted **clutch** field goal defined as any field goal attempted in the 4th quarter or overtime with under two minutes remaining that could tie the game or take the lead.
+-   `XPM`: made extra point
+-   `XPA`: missed extra point
 
 
 #### What this project includes: 
@@ -194,7 +197,7 @@ A few beliefs about field goals:
 -   any other play-by-play data or kicking data (no punts, extra points, kickoffs, or blocked returns)
 -   any previous seasons of data (only 2022 right now)
 -   any proprietary models (only raw observed data)
--   the leaderboard page is only for FBS schools (FCS schools not included)
+-   the leaderboard page is only for FBS schools 
 
 * * * 
 
@@ -245,7 +248,6 @@ output$pbptable <- reactable::renderReactable({
     )
   )
 })
-
 output$lbtable <- reactable::renderReactable({
   datalb <- final
   
@@ -283,4 +285,3 @@ output$lbtable <- reactable::renderReactable({
   )
 })
 ```
-

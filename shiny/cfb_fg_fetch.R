@@ -12,18 +12,15 @@ pbp_one <- cfbd_pbp_data(
   epa_wpa = TRUE
 )
 
+
 # load full pbp of last year of only made and missed field goals and adjust weeks
 field_goals <- pbp_one %>% 
        filter(play_type == "Field Goal Good" | play_type == "Field Goal Missed" | play_type == "Blocked Field Goal" | play_type == "Missed Field Goal Return" | play_type == "Blocked Field Goal Touchdown") %>%
-       mutate(Week = if_else(wallclock < "2022-08-31T01:06:19.000Z", 0, 1))
-
-# combine with future weeks
-# pbp_two <- cfbd_pbp_data(
-#  2022,
-#  season_type = "regular",
-#  week = 2,
-#  epa_wpa = TRUE
-# )
+       mutate(Week = if_else(wallclock < "2022-08-31T01:06:19.000Z", 0, 1)) %>% 
+       # fix game with no clock 
+       mutate(Week = case_when(
+         game_id == 401420846 ~ 1,
+         TRUE ~ Week))
 
 # find fgs with kicker name
 fgs_clean <- field_goals %>%
@@ -36,6 +33,21 @@ fgs_clean <- field_goals %>%
 
 # write csv 
 write.csv(fgs_clean, 'fgs_clean.csv')
+
+# extra point by kicker
+ck <- cfbd_stats_season_player(2022, category = "kicking") %>% 
+rename(kicker_player_name = player, pos_team = team) %>% 
+select(pos_team, athlete_id, kicker_player_name, category, kicking_fgm, kicking_fga, kicking_xpa, kicking_xpm, kicking_pts, kicking_long)
+
+write.csv(ck, 'ck_xp.csv')
+
+# combine with future weeks
+# pbp_two <- cfbd_pbp_data(
+#  2022,
+#  season_type = "regular",
+#  week = 2,
+#  epa_wpa = TRUE
+# )
 
 
 # kicks between a certain yardage - might use in the future
