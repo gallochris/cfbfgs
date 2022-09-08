@@ -85,10 +85,7 @@ fgs_clutch <- fgs_lb %>%
 # group by player and show leaderboard
 by_kicker <- fgs_lb %>%
   group_by(kicker_player_name, pos_team) %>%
-  summarise(
-    FGM = sum(fgm),
-    FGA = sum(fga),
-    Yds = sum(yds_fg))
+  summarise(Yds = sum(yds_fg))
 
 # list and join data
 fg_list <- list(by_kicker, fgs_clutch, xp_player) %>%
@@ -96,8 +93,8 @@ fg_list <- list(by_kicker, fgs_clutch, xp_player) %>%
             mutate(pos_team.x = if_else(is.na(pos_team.x), pos_team, pos_team.x)) %>%
            select(kicker_player_name,
                   pos_team.x,
-                  FGM,
-                  FGA,
+                  kicking_fgm,
+                  kicking_fga,
                   Yds,
                   CFGM, 
                   CFGA,
@@ -115,11 +112,12 @@ main <- fg_list %>%
         inner_join(team_info, by = c("pos_team.x" = "school")) 
         
 final <- main %>%
-         rename(Player = kicker_player_name, TT = pos_team.x, Team = logo, XPA = kicking_xpa, XPM = kicking_xpm ) %>%
+         rename(Player = kicker_player_name, TT = pos_team.x, Team = logo, XPA = kicking_xpa, XPM = kicking_xpm, FGM = kicking_fgm, FGA = kicking_fga) %>%
          mutate(`FG%` = if_else(FGA == 0, scales::percent(0), scales::percent(FGM / FGA, accuracy = 0.1L)), 
-         `Yds/A` = if_else(FGA == 0, format(round(0)), format(round(Yds / FGA), nsmall = 1))) %>%
-         select(Team, Player, TT, FGM, FGA, `FG%`, `Yds/A`, CFGM, CFGA, XPM, XPA) %>%
-         arrange(-FGA)
+         `Yds/A` = if_else(FGA == 0, format(round(0)), format(round(Yds / FGA), nsmall = 1)),
+         Pts = sum((FGM*3)+ XPM)) %>%
+         select(Team, Player, TT, FGM, FGA, `FG%`, Pts, CFGM, CFGA, XPM, XPA) %>%
+         arrange(-Pts)
 ```
 
 ::: {.panel-tabset}
