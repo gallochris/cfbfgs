@@ -5,7 +5,7 @@ server: shiny
 ---
 
 :::{.callout-note}
-Last updated to include games through: `September 10, 2022`.
+Last updated to include games through: `September 17, 2022`.
 :::
 
 ```{r}
@@ -18,9 +18,10 @@ library(stringr)
 library(tidyverse)
 
 # load data
-fgs_clean <- read.csv('fgs_all.csv')
+fgs_clean <- read_csv('fgs_09192022.csv')
 team_info <- readRDS("team_info.RDS")
-xp_player <- read.csv('ck_xp.csv')
+xp_player <- read_csv('ck_xp.csv')
+team_stats <- read_csv('team_stats.csv')
 
 # build pbp
 fgs <- fgs_clean %>%
@@ -89,7 +90,7 @@ by_kicker <- fgs_lb %>%
 
 # list and join data
 fg_list <- list(by_kicker, fgs_clutch, xp_player) %>%
-            reduce(full_join, by = 'kicker_player_name') %>%
+            reduce(inner_join, by = 'kicker_player_name') %>%
             mutate(pos_team.x = if_else(is.na(pos_team.x), pos_team, pos_team.x)) %>%
            select(kicker_player_name,
                   pos_team.x,
@@ -108,31 +109,80 @@ team_info <- team_info %>%
          logo = as.character(logo))
 
 # combine team info with list 
-main <- fg_list %>% 
+player_main <- fg_list %>% 
         inner_join(team_info, by = c("pos_team.x" = "school")) 
         
-final <- main %>%
+player_final <- player_main %>%
          rename(Player = kicker_player_name, TT = pos_team.x, Team = logo, XPA = kicking_xpa, XPM = kicking_xpm, FGM = kicking_fgm, FGA = kicking_fga) %>%
          mutate(`FG%` = if_else(FGA == 0, scales::percent(0), scales::percent(FGM / FGA, accuracy = 0.1L)), 
          `Yds/A` = if_else(FGA == 0, format(round(0)), format(round(Yds / FGA), nsmall = 1)),
          Pts = sum((FGM*3)+ XPM)) %>%
          select(Team, Player, TT, FGM, FGA, `FG%`, Pts, CFGM, CFGA, XPM, XPA) %>%
          arrange(-Pts)
+
+# build table by team
+fgs_team <- fgs_clean %>%
+            mutate(rz = if_else(yds_fg < 38, 1, 0),
+                  miss = if_else(play_type == "Field Goal Missed" | play_type == "Blocked Field Goal" | play_type == "Blocked Field Goal Touchdown", 1, 0)) %>%
+            group_by(pos_team) %>%
+            summarise(`Avg_Yds` = median(yds_fg),
+                      `Pts/A` = format(round((sum(fgm)*3) / sum(fga)), nsmall = 1),
+                      RZ_FGs = sum(rz),
+                      TO_FG = sum(miss),
+                      Avg_EPA = median(EPA),
+                      FGA = sum(fga)) %>%
+            replace(is.na(.), 0) 
+
+# team list
+team_list <- list(fgs_team, team_stats) %>%
+            reduce(inner_join, by = 'pos_team') %>%
+            filter(FGA > 1) %>%
+            mutate(TDs = pass_TDs + rush_TDs, 
+                   TVs = turnovers + TO_FG, 
+                   `Pts/A` = if_else(is.na(`Pts/A`), '0.0', `Pts/A`)) %>%
+           select(pos_team,
+                  `Avg_Yds`,
+                  `Pts/A`,
+                  `RZ_FGs`,
+                  TDs, 
+                  TVs,
+                  Avg_EPA) %>%
+            replace(is.na(.), 0) 
+
+
+# combine team info with list
+team_main <- team_list %>% 
+        inner_join(team_info, by = c("pos_team" = "school")) 
+        
+team_final <- team_main %>%
+         rename(Team = logo, School = pos_team) %>%
+         mutate(Avg_EPA = format(round(Avg_EPA, 2), nsmall = 2),
+                `Avg_Yds` = format(round(`Avg_Yds`, 2), nsmall =1)) %>%
+         select(Team, 
+                School, 
+                `Avg_Yds`,
+                `Pts/A`,
+                `RZ_FGs`,
+                TDs, 
+                TVs,
+                Avg_EPA) %>%
+         arrange(-`RZ_FGs`)
+        
 ```
 
 ::: {.panel-tabset}
 
-### Leaderboard
+### Kickers
 ```{r}
 fluidPage(
   fluidRow(
     column(4,
-      selectizeInput('school', 'School', c("All", unique((final$TT)
+      selectizeInput('school', 'School', c("All", unique((player_final$TT)
       )), multiple = FALSE),
 )),
 fluidRow(column(
   12,
-  reactable::reactableOutput("lbtable")
+  reactable::reactableOutput("playertable")
 )))
 ```
 
@@ -159,6 +209,20 @@ fluidPage(fluidRow(
 fluidRow(column(
   12,
   reactable::reactableOutput("pbptable")
+)))
+```
+
+### Teams
+```{r}
+fluidPage(
+  fluidRow(
+    column(4,
+      selectizeInput('School', 'School', c("All", unique((team_final$School)
+      )), multiple = FALSE),
+)),
+fluidRow(column(
+  12,
+  reactable::reactableOutput("teamtable")
 )))
 ```
 
@@ -246,8 +310,8 @@ output$pbptable <- reactable::renderReactable({
     )
   )
 })
-output$lbtable <- reactable::renderReactable({
-  datalb <- final
+output$playertable <- reactable::renderReactable({
+  datalb <- player_final
   
   if (input$school != "All") {
     datalb <- datalb[datalb$TT == input$school, ]
@@ -270,6 +334,34 @@ output$lbtable <- reactable::renderReactable({
         }
       ),
       TT = colDef(show = FALSE),
+      Team = colDef(
+        cell = function(value) {
+          image <- img(src = value,
+                       style = "height: 24px;",
+                       alt = value)
+          tagList(div(style = "display: inline-block; width: 45px;", image),
+                  name = "",)
+        }
+      )
+    )
+  )
+})
+
+output$teamtable <- reactable::renderReactable({
+  datateam <- team_final
+  
+  if (input$School != "All") {
+    datateam <- datateam[datateam$School == input$School, ]
+  }
+  
+  reactable(
+    datateam,
+    searchable = FALSE,
+    showPageSizeOptions = TRUE,
+    striped = TRUE,
+    highlight = TRUE,
+    defaultColDef = colDef(maxWidth = 90,),
+    columns = list(
       Team = colDef(
         cell = function(value) {
           image <- img(src = value,
