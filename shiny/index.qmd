@@ -5,7 +5,7 @@ server: shiny
 ---
 
 :::{.callout-note}
-Last updated to include games through: `September 17, 2022`.
+Last updated to include games through: `September 24, 2022`.
 :::
 
 ```{r}
@@ -18,7 +18,7 @@ library(stringr)
 library(tidyverse)
 
 # load data
-fgs_clean <- read_csv('fgs_09192022.csv')
+fgs_clean <- read_csv('fgs_09252022.csv')
 team_info <- readRDS("team_info.RDS")
 xp_player <- read_csv('ck_xp.csv')
 team_stats <- read_csv('team_stats.csv')
@@ -90,7 +90,7 @@ by_kicker <- fgs_lb %>%
 
 # list and join data
 fg_list <- list(by_kicker, fgs_clutch, xp_player) %>%
-            reduce(inner_join, by = 'kicker_player_name') %>%
+            reduce(full_join, by = 'kicker_player_name') %>%
             mutate(pos_team.x = if_else(is.na(pos_team.x), pos_team, pos_team.x)) %>%
            select(kicker_player_name,
                   pos_team.x,
@@ -138,14 +138,14 @@ team_list <- list(fgs_team, team_stats) %>%
             reduce(inner_join, by = 'pos_team') %>%
             filter(FGA > 1) %>%
             mutate(TDs = pass_TDs + rush_TDs, 
-                   TVs = turnovers + TO_FG, 
                    `Pts/A` = if_else(is.na(`Pts/A`), '0.0', `Pts/A`)) %>%
            select(pos_team,
                   `Avg_Yds`,
                   `Pts/A`,
                   `RZ_FGs`,
                   TDs, 
-                  TVs,
+                  turnovers,
+                  TO_FG,
                   Avg_EPA) %>%
             replace(is.na(.), 0) 
 
@@ -155,7 +155,7 @@ team_main <- team_list %>%
         inner_join(team_info, by = c("pos_team" = "school")) 
         
 team_final <- team_main %>%
-         rename(Team = logo, School = pos_team) %>%
+         rename(Team = logo, School = pos_team, TVs = TO_FG, TOs = turnovers) %>%
          mutate(Avg_EPA = format(round(Avg_EPA, 2), nsmall = 2),
                 `Avg_Yds` = format(round(`Avg_Yds`, 2), nsmall =1)) %>%
          select(Team, 
@@ -163,7 +163,8 @@ team_final <- team_main %>%
                 `Avg_Yds`,
                 `Pts/A`,
                 `RZ_FGs`,
-                TDs, 
+                TDs,
+                TOs, 
                 TVs,
                 Avg_EPA) %>%
          arrange(-`RZ_FGs`)
@@ -249,7 +250,8 @@ A few beliefs about field goals:
 -   `XPA`: missed extra point
 -   `Pts/A`: points per field goal attempt 
 -   `RZ_FGs`: field goals attempted in the red zone or attempts under 38 yards
--   `TVs`: turnovers plus missed field goals  
+-   `TVs`: missed field goals 
+-   `TOs`: turnovers
 
 
 #### What this project includes: 
@@ -364,8 +366,10 @@ output$teamtable <- reactable::renderReactable({
     showPageSizeOptions = TRUE,
     striped = TRUE,
     highlight = TRUE,
-    defaultColDef = colDef(maxWidth = 90,),
+    defaultColDef = colDef(maxWidth = 80,),
     columns = list(
+      School = colDef(
+        maxWidth = 100),
       Team = colDef(
         cell = function(value) {
           image <- img(src = value,
