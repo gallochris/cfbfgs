@@ -5,10 +5,10 @@ server: shiny
 ---
 
 :::{.callout-note}
-Last updated to include games through: `September 24, 2022`.
+Last updated to include games through: `October 2, 2022`.
 :::
 
-```{r}
+```{r setup}
 #| context: setup
 #| warning: false
 library(reactable)
@@ -18,7 +18,7 @@ library(stringr)
 library(tidyverse)
 
 # load data
-fgs_clean <- read_csv('fgs_09252022.csv')
+fgs_clean <- read_csv('fgs_10022022.csv')
 team_info <- readRDS("team_info.RDS")
 xp_player <- read_csv('ck_xp.csv')
 team_stats <- read_csv('team_stats.csv')
@@ -72,6 +72,10 @@ fgs <- fgs_clean %>%
 fgs_lb <- fgs_clean %>%
   mutate(kicker_player_name = case_when(
     str_detect(kicker_player_name, 'M. Suarez') ~ 'Morgan Suarez',
+    str_detect(kicker_player_name, 'W. Ross') ~ 'Will Ross',
+    str_detect(kicker_player_name, 'William Ross') ~ 'Will Ross',
+    str_detect(kicker_player_name, 'S. Shrader') ~ 'Spencer Shrader',
+    str_detect(kicker_player_name, '4 yd FG') ~ 'Camden Lewis',
     TRUE ~ kicker_player_name
   ))
 
@@ -126,7 +130,7 @@ fgs_team <- fgs_clean %>%
                   miss = if_else(play_type == "Field Goal Missed" | play_type == "Blocked Field Goal" | play_type == "Blocked Field Goal Touchdown", 1, 0)) %>%
             group_by(pos_team) %>%
             summarise(`Avg_Yds` = median(yds_fg),
-                      `Pts/A` = format(round((sum(fgm)*3) / sum(fga)), nsmall = 1),
+                      `Pts/A` = format(round((sum(fgm)*3) / sum(fga), 1), nsmall = 1),
                       RZ_FGs = sum(rz),
                       TO_FG = sum(miss),
                       Avg_EPA = median(EPA),
@@ -174,7 +178,7 @@ team_final <- team_main %>%
 ::: {.panel-tabset}
 
 ### Kickers
-```{r}
+```{r kickers-tab}
 fluidPage(
   fluidRow(
     column(4,
@@ -189,7 +193,7 @@ fluidRow(column(
 
 
 ### Play-by-play
-```{r}
+```{r pbp-tab}
 fluidPage(fluidRow(
   column(4,
          selectInput('wk', 'Week', c("All", unique((fgs$Week)
@@ -214,7 +218,7 @@ fluidRow(column(
 ```
 
 ### Teams
-```{r}
+```{r teams-tab}
 fluidPage(
   fluidRow(
     column(4,
