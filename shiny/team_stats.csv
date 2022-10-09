@@ -1,132 +1,132 @@
 "","season","pos_team","pass_TDs","rush_TDs","turnovers"
-"1",2022,"Oregon State",7,14,11
-"2",2022,"Georgia",7,15,5
-"3",2022,"Ohio",11,5,6
-"4",2022,"Utah State",8,2,15
-"5",2022,"Colorado State",6,0,9
-"6",2022,"Wyoming",7,5,5
-"7",2022,"Purdue",11,9,8
-"8",2022,"Missouri",5,8,9
-"9",2022,"Central Michigan",11,8,11
-"10",2022,"Wake Forest",18,6,3
-"11",2022,"Connecticut",5,6,11
-"12",2022,"UCF",5,10,7
-"13",2022,"Ohio State",19,15,4
-"14",2022,"Colorado",4,4,7
-"15",2022,"Minnesota",7,18,6
-"16",2022,"North Texas",15,9,12
-"17",2022,"Auburn",4,10,12
-"18",2022,"Army",4,13,6
-"19",2022,"Tennessee",11,15,5
-"20",2022,"San José State",4,8,1
-"21",2022,"Nevada",2,12,3
-"22",2022,"Maryland",10,12,7
-"23",2022,"Michigan",8,19,2
-"24",2022,"Southern Mississippi",7,5,8
-"25",2022,"Marshall",7,10,6
-"26",2022,"Clemson",12,13,4
-"27",2022,"NC State",12,6,7
-"28",2022,"Stanford",10,6,12
-"29",2022,"UCLA",13,13,5
-"30",2022,"Boise State",6,8,8
-"31",2022,"Ball State",11,5,8
-"32",2022,"Indiana",8,7,9
-"33",2022,"Eastern Michigan",9,9,12
-"34",2022,"South Florida",3,12,9
-"35",2022,"San Diego State",3,5,8
-"36",2022,"Houston",9,7,7
-"37",2022,"Georgia State",10,7,8
-"38",2022,"Oklahoma",12,12,2
-"39",2022,"Alabama",16,13,5
-"40",2022,"Miami",4,11,6
-"41",2022,"Texas",9,10,3
-"42",2022,"Texas A&M",6,6,8
-"43",2022,"Florida State",10,12,5
-"44",2022,"Virginia Tech",5,5,7
-"45",2022,"Oregon",12,12,5
-"46",2022,"Syracuse",10,11,4
-"47",2022,"Louisville",3,13,9
-"48",2022,"Middle Tennessee",8,9,5
-"49",2022,"Kansas",11,16,5
-"50",2022,"Temple",5,4,13
-"51",2022,"BYU",13,7,1
-"52",2022,"North Carolina",19,11,5
-"53",2022,"Florida",2,11,7
-"54",2022,"Notre Dame",6,7,5
-"55",2022,"Navy",2,4,7
-"56",2022,"New Mexico State",2,8,13
-"57",2022,"Florida Atlantic",15,8,9
-"58",2022,"Illinois",9,8,9
-"59",2022,"UTEP",6,4,12
-"60",2022,"Florida International",5,1,4
-"61",2022,"Northern Illinois",11,10,4
-"62",2022,"Coastal Carolina",14,8,8
-"63",2022,"Kentucky",12,4,8
-"64",2022,"Miami (OH)",6,5,6
-"65",2022,"East Carolina",15,9,5
-"66",2022,"Cincinnati",13,10,8
-"67",2022,"UMass",1,3,8
-"68",2022,"Washington State",13,5,12
-"69",2022,"Virginia",4,7,12
-"70",2022,"Memphis",9,11,3
-"71",2022,"Toledo",8,13,8
-"72",2022,"Old Dominion",9,3,7
-"73",2022,"Vanderbilt",12,9,4
-"74",2022,"Western Kentucky",18,7,8
-"75",2022,"Louisiana Monroe",4,10,5
-"76",2022,"Rutgers",6,8,7
-"77",2022,"New Mexico",3,8,6
-"78",2022,"Iowa State",11,5,9
-"79",2022,"Boston College",11,4,9
-"80",2022,"South Carolina",6,15,13
-"81",2022,"Arkansas State",7,13,3
-"82",2022,"Nebraska",7,14,9
-"83",2022,"Oklahoma State",13,9,4
-"84",2022,"Arkansas",9,11,6
-"85",2022,"TCU",11,15,1
-"86",2022,"Wisconsin",8,11,8
-"87",2022,"Troy",9,5,10
-"88",2022,"Charlotte",17,4,8
-"89",2022,"Louisiana",11,4,6
-"90",2022,"Northwestern",6,7,13
-"91",2022,"Appalachian State",16,10,3
-"92",2022,"Arizona State",4,9,7
-"93",2022,"Baylor",9,16,5
-"94",2022,"LSU",7,15,7
-"95",2022,"Louisiana Tech",9,4,13
-"96",2022,"Rice",9,9,10
-"97",2022,"Texas State",11,2,12
-"98",2022,"Kansas State",3,15,2
-"99",2022,"California",8,7,2
-"100",2022,"James Madison",12,11,5
-"101",2022,"Western Michigan",5,7,9
-"102",2022,"West Virginia",10,13,5
-"103",2022,"Mississippi State",19,5,8
-"104",2022,"Akron",6,3,9
-"105",2022,"Georgia Tech",3,6,4
-"106",2022,"Georgia Southern",10,14,7
-"107",2022,"UT San Antonio",14,10,7
-"108",2022,"Bowling Green",15,3,4
-"109",2022,"Texas Tech",13,9,12
-"110",2022,"UAB",5,11,7
-"111",2022,"Utah",14,12,4
-"112",2022,"Fresno State",4,7,5
-"113",2022,"Tulane",10,11,7
-"114",2022,"USC",12,13,1
-"115",2022,"Air Force",5,15,7
-"116",2022,"Michigan State",10,9,8
-"117",2022,"South Alabama",10,10,6
-"118",2022,"Iowa",2,5,5
+"1",2022,"New Mexico State",2,9,13
+"2",2022,"Utah State",10,4,16
+"3",2022,"Virginia",5,8,15
+"4",2022,"South Carolina",7,17,15
+"5",2022,"Tennessee",13,17,5
+"6",2022,"Indiana",9,7,10
+"7",2022,"Tulane",12,12,7
+"8",2022,"Missouri",5,10,11
+"9",2022,"Washington State",15,5,12
+"10",2022,"Connecticut",6,9,11
+"11",2022,"UCF",7,13,7
+"12",2022,"Houston",12,8,8
+"13",2022,"Ohio State",25,16,5
+"14",2022,"UTEP",8,6,16
+"15",2022,"Colorado",4,4,7
+"16",2022,"Minnesota",7,18,6
+"17",2022,"North Texas",15,9,12
+"18",2022,"Arizona State",7,11,8
+"19",2022,"Eastern Michigan",12,12,13
+"20",2022,"Southern Mississippi",8,5,12
+"21",2022,"Texas",13,13,4
+"22",2022,"Texas Tech",15,11,13
+"23",2022,"Purdue",13,11,11
+"24",2022,"San José State",6,11,1
+"25",2022,"Florida State",11,13,7
+"26",2022,"Nevada",2,14,5
+"27",2022,"Boston College",11,4,10
+"28",2022,"Michigan",11,20,3
+"29",2022,"Marshall",7,10,6
+"30",2022,"Florida International",8,2,7
+"31",2022,"NC State",13,6,8
+"32",2022,"UCLA",17,15,6
+"33",2022,"Iowa State",11,5,9
+"34",2022,"Wisconsin",14,11,8
+"35",2022,"Oregon State",9,16,11
+"36",2022,"Kansas State",4,15,3
+"37",2022,"Akron",6,7,11
+"38",2022,"Nebraska",9,14,11
+"39",2022,"TCU",14,17,3
+"40",2022,"Wyoming",9,5,5
+"41",2022,"Northwestern",7,7,16
+"42",2022,"Georgia State",10,7,8
+"43",2022,"Troy",10,7,12
+"44",2022,"UNLV",10,13,4
+"45",2022,"Kansas",15,16,7
+"46",2022,"Oklahoma",12,12,4
+"47",2022,"Boise State",8,9,9
+"48",2022,"Florida",6,16,10
+"49",2022,"Stanford",12,7,13
+"50",2022,"Virginia Tech",6,7,9
+"51",2022,"Oklahoma State",14,12,4
+"52",2022,"Hawai'i",2,9,11
+"53",2022,"Vanderbilt",14,10,5
+"54",2022,"Oregon",12,19,5
+"55",2022,"Syracuse",10,11,4
+"56",2022,"Ohio",14,9,6
+"57",2022,"Colorado State",6,0,12
+"58",2022,"Temple",5,4,13
+"59",2022,"Buffalo",8,12,7
+"60",2022,"Louisiana Monroe",6,11,7
+"61",2022,"Texas State",13,3,13
+"62",2022,"Florida Atlantic",15,8,9
+"63",2022,"Ball State",12,5,10
+"64",2022,"Texas A&M",8,6,9
+"65",2022,"Illinois",9,8,12
+"66",2022,"San Diego State",4,5,8
+"67",2022,"Fresno State",4,9,7
+"68",2022,"Coastal Carolina",15,11,8
+"69",2022,"Arkansas State",9,13,4
+"70",2022,"Kentucky",14,4,10
+"71",2022,"Miami (OH)",6,5,6
+"72",2022,"Navy",3,9,8
+"73",2022,"Cincinnati",15,12,10
+"74",2022,"USC",14,14,1
+"75",2022,"Rutgers",6,9,10
+"76",2022,"UT San Antonio",15,13,8
+"77",2022,"Toledo",12,14,8
+"78",2022,"New Mexico",3,10,9
+"79",2022,"Memphis",11,12,4
+"80",2022,"Old Dominion",9,3,7
+"81",2022,"Western Kentucky",20,9,8
+"82",2022,"Miami",7,11,8
+"83",2022,"Auburn",5,10,13
+"84",2022,"Pittsburgh",7,17,8
+"85",2022,"Western Michigan",7,8,10
+"86",2022,"Washington",16,15,5
+"87",2022,"UMass",1,5,9
+"88",2022,"Duke",8,14,3
+"89",2022,"North Carolina",21,12,7
+"90",2022,"Charlotte",17,4,8
+"91",2022,"UAB",6,15,7
+"92",2022,"Louisiana",10,4,6
+"93",2022,"Tulsa",16,9,11
+"94",2022,"Georgia",7,21,6
+"95",2022,"Central Michigan",12,9,13
+"96",2022,"Louisiana Tech",13,4,15
+"97",2022,"Liberty",11,13,13
+"98",2022,"Baylor",9,16,5
+"99",2022,"Air Force",6,17,9
+"100",2022,"Mississippi State",22,8,8
+"101",2022,"LSU",8,16,9
+"102",2022,"Rice",9,9,10
+"103",2022,"SMU",12,10,12
+"104",2022,"Louisville",4,16,11
+"105",2022,"Clemson",15,14,5
+"106",2022,"California",8,7,2
+"107",2022,"James Madison",16,13,5
+"108",2022,"Arkansas",10,12,8
+"109",2022,"West Virginia",10,13,5
+"110",2022,"Notre Dame",9,7,6
+"111",2022,"Georgia Tech",5,6,4
+"112",2022,"Arizona",15,8,11
+"113",2022,"Georgia Southern",10,14,7
+"114",2022,"Northern Illinois",13,12,8
+"115",2022,"East Carolina",16,9,7
+"116",2022,"South Alabama",10,10,6
+"117",2022,"Alabama",19,13,9
+"118",2022,"Maryland",13,13,8
 "119",2022,"Kent State",6,10,8
-"120",2022,"SMU",12,8,10
-"121",2022,"Washington",16,10,4
-"122",2022,"Buffalo",8,8,6
-"123",2022,"Arizona",14,7,8
-"124",2022,"Tulsa",14,8,7
-"125",2022,"Duke",7,14,2
-"126",2022,"UNLV",9,13,3
-"127",2022,"Liberty",9,9,12
-"128",2022,"Pittsburgh",7,11,7
-"129",2022,"Hawai'i",1,8,10
-"130",2022,"Penn State",11,12,6
-"131",2022,"Ole Miss",7,17,7
+"120",2022,"BYU",15,8,2
+"121",2022,"Iowa",2,5,6
+"122",2022,"Ole Miss",10,21,9
+"123",2022,"Bowling Green",16,3,8
+"124",2022,"Middle Tennessee",9,10,6
+"125",2022,"Appalachian State",19,10,5
+"126",2022,"Wake Forest",20,10,3
+"127",2022,"Michigan State",12,9,9
+"128",2022,"Utah",14,15,6
+"129",2022,"Penn State",11,12,6
+"130",2022,"Army",5,13,8
+"131",2022,"South Florida",5,13,9

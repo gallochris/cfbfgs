@@ -5,20 +5,20 @@ library(stringr)
 
 # Fetch latest week when ready --------------------------------------------------------
 # load the next week 
-pbp_five <- cfbd_pbp_data(
+pbp_six <- cfbd_pbp_data(
   2022,
   season_type = "regular",
-  week = 5,
+  week = 6,
   epa_wpa = TRUE
 )
 
 # find just the field goals
-field_goals <- pbp_five %>% 
+field_goals <- pbp_six %>% 
        filter(play_type %in% c("Field Goal Good", "Field Goal Missed", "Blocked Field Goal", "Blocked Field Goal Touchdown")) %>%
-       mutate(Week = 5)
+       mutate(Week = 6)
 
 # find fgs with kicker name
-fgs_clean_five <- field_goals %>%
+fgs_clean_six <- field_goals %>%
        mutate(kicker_player_name = play_text %>%
              str_extract(".\\D+(?= )")) %>%
         mutate(fgm = if_else(fg_made == TRUE, 1, 0))  %>% 
@@ -27,17 +27,11 @@ fgs_clean_five <- field_goals %>%
         select(id_play, Week, game_id, pos_team, def_pos_team, pos_team_score, def_pos_team_score, kicker_player_name, yds_fg, pts_scored, fgm, fga, fg_make_prob, fg_inds, FG_before, play_text, EPA, wpa, half, period, clock.minutes, clock.seconds, down, distance, yards_to_goal, fg_made, play_type)
 
 # write csv + read csv
-write.csv(fgs_clean_five, 'fgs_clean_five.csv')
+write.csv(fgs_clean_six, 'fgs_clean_six.csv')
 
-fgs_clean_five <- read_csv('fgs_clean_five.csv')
+fgs_clean_six <- read_csv('fgs_clean_six.csv')
 
-fgs_clean_five <- subset(fgs_clean_five, select = -c(...1))
-
-
-fgs_clean_four <- read_csv('fgs_clean_four.csv')
-
-fgs_clean_four <- subset(fgs_clean_four, select = -c(...1))
-
+fgs_clean_six <- subset(fgs_clean_six, select = -c(...1))
 
 # load previous weeks 
 fgs_prev <- read_csv('fgs_all.csv')
@@ -46,7 +40,7 @@ fgs_prev <- read_csv('fgs_all.csv')
 fgs_prev <- subset(fgs_prev, select = -c(...1))
 
 # merge 
-fgs_all <- list(fgs_prev, fgs_clean_five) %>% 
+fgs_all <- list(fgs_clean_six, fgs_clean_five, fgs_clean_four, fgs_clean_three, fgs_clean_two, fgs_clean_one) %>% 
   bind_rows 
 
 # remove returns and clean up bad pbp
@@ -56,7 +50,7 @@ fgs_all <- fgs_all %>%
                   yds_fg = if_else(yards_to_goal == 1, 18, yds_fg)) 
 
 # write master file
-write.csv(fgs_all, 'fgs_10022022.csv')
+write.csv(fgs_all, 'fgs_10092022.csv')
 
 # This was the original query to capture week 0 and week 1
 # pull the data using this function to get the wallclock and more data
