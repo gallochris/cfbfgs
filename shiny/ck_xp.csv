@@ -1,197 +1,203 @@
 "","pos_team","athlete_id","kicker_player_name","category","kicking_fgm","kicking_fga","kicking_xpa","kicking_xpm","kicking_pts","kicking_long"
-"1","Ole Miss","4373693","Jonathan Cruz","kicking",4,5,30,30,42,53
-"2","Western Kentucky","4361765","Brayden Narveson","kicking",7,9,32,32,53,47
-"3","Oregon State","4892332","Atticus Sappington","kicking",4,5,7,6,18,40
-"4","Tulane","4698102","Valentino Ambrosio","kicking",1,1,3,3,6,42
-"5","Central Michigan","4695678","Marshall Meeder","kicking",2,6,8,7,13,48
-"6","Minnesota","4362360","Matthew Trickett","kicking",6,7,25,25,43,46
-"7","California","4372718","Dario Longhetto","kicking",6,8,15,15,33,42
-"8","New Mexico","5082358","Luke Drzewiecki","kicking",1,3,4,4,7,37
-"9","Clemson","4683923","Banks Pope","kicking",0,0,1,1,1,0
-"10","James Madison","4366638","Camden Wise","kicking",2,6,29,29,35,27
-"11","UT San Antonio","4245202","Jared Sackett","kicking",6,8,23,23,41,43
-"12","UAB","4570113","Matthew Quinn","kicking",4,7,21,21,33,51
-"13","Arkansas State","5082424","Dominic Zvada","kicking",9,9,21,21,48,46
-"14","TCU","4574573","Griffin Kell","kicking",2,2,25,23,29,39
-"15","Syracuse","4258620","Andre Szmyt","kicking",10,11,22,22,52,50
-"16","Tulane","4687039","Kriston Esnard","kicking",3,6,20,20,29,30
-"17","South Alabama","4429715","Diego Guajardo","kicking",7,7,21,20,41,48
-"18","Louisiana Tech","4882138","Buck Buchanan","kicking",1,2,0,0,3,52
-"19","Florida State","4568263","Ryan Fitzgerald","kicking",5,10,22,21,36,47
-"20","Miami","4569923","Andres Borregales","kicking",8,11,20,20,44,48
-"21","Florida","4875192","Adam Mihalek","kicking",5,9,20,20,35,50
-"22","South Carolina","4427459","Alex Herrera","kicking",0,0,3,3,3,0
-"23","Wisconsin","4878487","Nate Van Zelst","kicking",2,3,14,14,20,39
-"24","Vanderbilt","4241452","Joseph Bulovas","kicking",5,5,23,23,38,40
-"25","Arkansas","4686361","Cam Little","kicking",5,7,22,22,37,51
-"26","Northwestern","4566164","Jack Olsen","kicking",0,1,1,1,1,0
-"27","Georgia State","4568415","Michael Hayes","kicking",4,6,15,14,26,46
-"28","New Mexico State","4572467","Ethan Albertson","kicking",1,4,3,2,5,46
-"29","Air Force","4697146","Anth Rodriguez","kicking",0,0,6,6,6,0
-"30","Kent State","4875739","Andrew Glass","kicking",7,10,13,13,34,50
-"31","Texas Tech","4362170","Trey Wolff","kicking",8,11,18,18,42,51
-"32","Louisiana","4393431","Preston Stafford","kicking",2,4,13,13,19,36
-"33","Iowa State","4917269","Jace Gilbert","kicking",9,12,14,14,41,44
-"34","Ohio State","4240678","Noah Ruggles","kicking",2,3,41,41,47,25
-"35","SMU","4430855","Jahari Rogers","kicking",0,0,6,6,6,0
-"36","Baylor","4373032","John Mayers","kicking",2,2,15,15,21,34
-"37","UCF","5085396","Colton Boomer","kicking",7,7,10,9,30,43
-"38","Kansas State","4569130","Ty Zentner","kicking",0,0,1,1,1,0
-"39","Charlotte","4383603","Antonio Zita","kicking",1,2,20,20,23,32
-"40","Akron","4361955","Cory Smigel","kicking",1,4,4,3,6,25
-"41","Auburn","4242519","Anders Carlson","kicking",6,8,14,14,32,45
-"42","Bowling Green","4373432","Mason Lawler","kicking",3,4,19,19,28,45
-"43","Michigan","4682758","Tommy Doman","kicking",0,0,2,2,2,0
-"44","Nebraska","4880416","Brendan Franke","kicking",0,1,0,0,0,0
-"45","Georgia","4433958","Jared Zirkel","kicking",1,1,0,0,3,21
-"46","UAB","4689656","Reese Burkhardt","kicking",0,0,2,2,2,0
-"47","North Texas","4360920","Ethan Mooney","kicking",8,9,26,26,50,43
-"48","Georgia Southern","4430026","Michael Lantz","kicking",0,1,0,0,0,0
-"49","Washington State","4569635","Dean Janikowski","kicking",5,7,20,20,35,38
-"50","Rutgers","5092436","Jude McAtamney","kicking",9,12,15,14,41,49
-"51","Louisiana Tech","4569179","Jacob Barnes","kicking",5,7,18,17,32,35
-"52","Florida International","4608896","Chase Gabriel","kicking",4,5,7,7,19,49
-"53","West Virginia","4262804","Parker Grothaus","kicking",0,0,3,2,2,0
-"54","Boise State","4699768","Jonah Dalmas","kicking",10,12,19,19,49,48
-"55","Arkansas State","4880080","Aidan Ellison","kicking",0,0,1,1,1,0
-"56","Kansas","4429098","Jacob Borcila","kicking",3,6,32,32,41,40
-"57","Florida Atlantic","4691984","Morgan Suarez","kicking",6,8,23,23,41,43
-"58","Mississippi State","4570967","Ben Raybon","kicking",4,6,22,20,32,53
-"59","Texas State","4576777","Seth Keller","kicking",6,7,16,16,34,37
-"60","UMass","4573284","Cameron Carson","kicking",7,10,8,8,29,47
-"61","Fresno State","4875605","Abraham Montano","kicking",7,11,14,13,34,43
-"62","Louisiana","4373895","Ben Wooldridge","kicking",0,0,1,1,1,0
-"63","Baylor","4879204","Isaiah Hankins","kicking",0,1,9,8,8,0
-"64","Miami (OH)","4880212","Graham Nicholson","kicking",7,10,11,11,32,48
-"65","Southern Mississippi","4430529","Andrew Stein","kicking",0,0,1,1,1,0
-"66","UCF","4428149","Daniel Obarski","kicking",0,2,10,10,10,0
-"67","Louisiana","4373653","Kenneth Almendares","kicking",1,3,2,2,5,51
-"68","Troy","5082582","Robert Bruce","kicking",0,0,1,1,1,0
-"69","Air Force","4887281","Matthew Dapore","kicking",10,11,17,17,47,54
-"70","Penn State","4683167","Sander Sahaydak","kicking",0,1,0,0,0,0
-"71","Iowa","5081335","Drew Stevens","kicking",6,7,8,8,26,51
-"72","UTEP","4362050","Gavin Baechle","kicking",12,13,17,17,53,54
-"73","USC","4875309","Denis Lynch","kicking",8,10,31,31,55,45
-"74","Washington State","4875368","Cole Norah","kicking",0,0,1,1,1,0
-"75","Boston College","4683283","Connor Lytton","kicking",5,10,15,15,30,46
-"76","Texas","4880347","Bert Auburn","kicking",10,13,29,29,59,49
-"77","Ohio","4912197","Nathanial Vakos","kicking",6,6,24,23,41,45
-"78","Purdue","4369789","Mitchell Fineran","kicking",5,7,23,23,38,43
-"79","Colorado State","4256090","Michael Boyle","kicking",2,3,3,3,9,43
-"80","Louisiana","4363134","Kam Pedescleaux","kicking",0,0,1,1,1,0
-"81","New Mexico","4686487","George Steinkamp","kicking",3,7,11,10,19,51
-"82","Oklahoma State","4361831","Alex Hale","kicking",0,0,2,2,2,0
-"83","Mississippi State","4361040","Massimo Biscardi","kicking",0,0,9,7,7,0
-"84","Maryland","4363538","Chad Ryland","kicking",8,10,23,22,46,53
-"85","Tennessee","4259641","Chase McGrath","kicking",8,10,28,28,52,51
-"86","Purdue","4699808","Caleb Krockover","kicking",0,0,1,1,1,0
-"87","UCLA","4569416","Nicholas Barr-Mira","kicking",8,11,29,29,53,49
-"88","Rice","4429860","Tim Horn","kicking",0,1,0,0,0,0
-"89","San Diego State","4876013","Jack Browning","kicking",9,10,12,12,39,50
-"90","UCLA","5091586","Joseph Firebaugh Jr.","kicking",0,0,2,2,2,0
-"91","Troy","4259576","Brooks Buce","kicking",9,10,16,16,43,48
-"92","Appalachian State","4692893","Michael Hughes","kicking",3,5,24,24,33,30
-"93","Oregon","4427798","Camden Lewis","kicking",7,7,31,31,52,38
+"1","Ole Miss","4373693","Jonathan Cruz","kicking",6,7,36,36,54,53
+"2","Tulane","4698102","Valentino Ambrosio","kicking",2,3,9,9,15,42
+"3","Minnesota","4362360","Matthew Trickett","kicking",6,7,27,27,45,46
+"4","UAB","4570113","Matthew Quinn","kicking",6,10,23,23,41,51
+"5","Clemson","4683923","Banks Pope","kicking",0,0,1,1,1,0
+"6","North Texas","5088818","Chris Cayton","kicking",0,0,3,3,3,0
+"7","Liberty","4874450","Nick Brown","kicking",5,11,24,24,39,49
+"8","Arkansas State","5082424","Dominic Zvada","kicking",10,10,23,23,53,46
+"9","Central Michigan","4880189","Josh Rolston","kicking",1,3,6,4,7,44
+"10","Tulane","4687039","Kriston Esnard","kicking",3,6,20,20,29,30
+"11","Arkansas","4686361","Cam Little","kicking",6,8,29,29,47,51
+"12","South Alabama","4429715","Diego Guajardo","kicking",9,9,26,25,52,48
+"13","Louisiana Tech","4882138","Buck Buchanan","kicking",2,3,0,0,6,52
+"14","Syracuse","4258620","Andre Szmyt","kicking",11,12,25,25,58,50
+"15","Auburn","4242519","Anders Carlson","kicking",8,10,18,18,42,45
+"16","Florida State","4568263","Ryan Fitzgerald","kicking",5,10,26,25,40,47
+"17","Florida","4875192","Adam Mihalek","kicking",5,9,25,25,40,50
+"18","South Carolina","4427459","Alex Herrera","kicking",0,0,3,3,3,0
+"19","Louisiana Monroe","4241402","Calum Sutherland","kicking",3,4,21,21,30,40
+"20","Louisiana Tech","4569179","Jacob Barnes","kicking",6,8,20,20,38,35
+"21","Northwestern","4566164","Jack Olsen","kicking",0,1,1,1,1,0
+"22","New Mexico State","4572467","Ethan Albertson","kicking",1,4,3,2,5,46
+"23","Air Force","4697146","Anth Rodriguez","kicking",0,0,6,6,6,0
+"24","Texas Tech","4362170","Trey Wolff","kicking",8,11,18,18,42,51
+"25","Louisiana","4393431","Preston Stafford","kicking",2,4,13,13,19,36
+"26","Ohio State","4240678","Noah Ruggles","kicking",2,3,41,41,47,25
+"27","North Texas","4360920","Ethan Mooney","kicking",10,11,28,28,58,43
+"28","SMU","4430855","Jahari Rogers","kicking",0,0,6,6,6,0
+"29","Western Michigan","4912229","Palmer Domschke","kicking",6,7,15,14,32,42
+"30","Kansas State","4569130","Ty Zentner","kicking",0,0,1,1,1,0
+"31","Miami (OH)","4880212","Graham Nicholson","kicking",11,14,15,15,48,49
+"32","Charlotte","4383603","Antonio Zita","kicking",1,2,22,22,25,32
+"33","Akron","4361955","Cory Smigel","kicking",1,4,4,3,6,25
+"34","Kent State","4875739","Andrew Glass","kicking",9,14,20,20,47,50
+"35","Michigan","4682758","Tommy Doman","kicking",0,0,2,2,2,0
+"36","Iowa State","4569051","Drake Nettles","kicking",0,0,1,1,1,0
+"37","Nebraska","4880416","Brendan Franke","kicking",0,1,0,0,0,0
+"38","Georgia","4433958","Jared Zirkel","kicking",1,1,0,0,3,21
+"39","Michigan","4372066","Jake Moody","kicking",13,16,33,33,72,52
+"40","Purdue","4369789","Mitchell Fineran","kicking",8,11,28,27,51,43
+"41","UAB","4689656","Reese Burkhardt","kicking",0,0,2,2,2,0
+"42","Georgia Southern","4430026","Michael Lantz","kicking",0,1,0,0,0,0
+"43","Rutgers","5092436","Jude McAtamney","kicking",9,12,15,14,41,49
+"44","Wisconsin","4878487","Nate Van Zelst","kicking",2,3,23,23,29,39
+"45","Florida International","4608896","Chase Gabriel","kicking",5,7,8,8,23,49
+"46","West Virginia","4262804","Parker Grothaus","kicking",0,0,3,2,2,0
+"47","Boise State","4699768","Jonah Dalmas","kicking",10,12,19,19,49,48
+"48","Arkansas State","4880080","Aidan Ellison","kicking",0,0,1,1,1,0
+"49","Colorado State","4256090","Michael Boyle","kicking",4,6,5,5,17,43
+"50","Mississippi State","4570967","Ben Raybon","kicking",4,6,22,20,32,53
+"51","UMass","4573284","Cameron Carson","kicking",7,10,9,9,30,47
+"52","Fresno State","4875605","Abraham Montano","kicking",8,12,16,15,39,43
+"53","Louisiana","4373895","Ben Wooldridge","kicking",0,0,1,1,1,0
+"54","Baylor","4879204","Isaiah Hankins","kicking",0,1,9,8,8,0
+"55","Southern Mississippi","4430529","Andrew Stein","kicking",0,0,1,1,1,0
+"56","Washington","4245287","Peyton Henry","kicking",9,10,34,34,61,50
+"57","UCF","4428149","Daniel Obarski","kicking",0,2,10,10,10,0
+"58","Nevada","4685167","Matthew Killam","kicking",3,5,6,5,14,48
+"59","Alabama","4567104","Will Reichard","kicking",9,13,40,40,67,52
+"60","Troy","5082582","Robert Bruce","kicking",0,0,1,1,1,0
+"61","Air Force","4887281","Matthew Dapore","kicking",10,11,23,23,53,54
+"62","SMU","5084095","Collin Rogers","kicking",8,9,18,18,42,46
+"63","Penn State","4683167","Sander Sahaydak","kicking",0,1,0,0,0,0
+"64","Iowa","5081335","Drew Stevens","kicking",6,7,8,8,26,51
+"65","Indiana","4371971","Charles Campbell","kicking",11,13,16,16,49,51
+"66","UTEP","4362050","Gavin Baechle","kicking",12,13,17,17,53,54
+"67","Washington State","4875368","Cole Norah","kicking",0,0,1,1,1,0
+"68","Boston College","4683283","Connor Lytton","kicking",5,10,15,15,30,46
+"69","Texas","4880347","Bert Auburn","kicking",11,15,32,32,65,49
+"70","Toledo","4401310","Thomas Cluckey","kicking",8,10,35,35,59,45
+"71","Temple","4373235","Camden Price","kicking",3,3,1,1,10,49
+"72","Louisiana","4363134","Kam Pedescleaux","kicking",0,0,1,1,1,0
+"73","Wisconsin","4693374","Jack Van Dyke","kicking",0,0,4,4,4,0
+"74","New Mexico","4686487","George Steinkamp","kicking",3,7,11,10,19,51
+"75","California","4372718","Dario Longhetto","kicking",8,12,16,16,40,42
+"76","Oklahoma State","4361831","Alex Hale","kicking",0,0,2,2,2,0
+"77","Ball State","4583754","Ben VonGunten","kicking",12,16,18,18,54,44
+"78","Duke","4429736","Charlie Ham","kicking",9,15,29,29,56,45
+"79","Purdue","4699808","Caleb Krockover","kicking",0,0,1,1,1,0
+"80","UCLA","4569416","Nicholas Barr-Mira","kicking",8,11,29,29,53,49
+"81","Rice","4429860","Tim Horn","kicking",0,1,0,0,0,0
+"82","Marshall","5082559","Rece Verhoff","kicking",5,8,20,19,34,38
+"83","Middle Tennessee","4689969","Zeke Rankin","kicking",7,7,25,25,46,35
+"84","San Diego State","4876013","Jack Browning","kicking",9,10,12,12,39,50
+"85","Buffalo","4373452","Alex McNulty","kicking",13,14,24,24,63,52
+"86","UCLA","5091586","Joseph Firebaugh Jr.","kicking",0,0,2,2,2,0
+"87","Connecticut","4685066","Noe Ruelas","kicking",7,8,16,16,37,54
+"88","Penn State","4361424","Jake Pinegar","kicking",5,7,23,22,37,48
+"89","Vanderbilt","4241452","Joseph Bulovas","kicking",5,6,23,23,38,40
+"90","Appalachian State","4692893","Michael Hughes","kicking",3,5,24,24,33,30
+"91","Miami","4569923","Andres Borregales","kicking",10,13,22,22,52,48
+"92","Oregon","4427798","Camden Lewis","kicking",7,7,31,31,52,38
+"93","Old Dominion","4912353","Ethan Sanchez","kicking",3,4,20,20,29,34
 "94","Wyoming","4699803","John Hoyland","kicking",15,16,16,16,61,55
-"95","Southern Mississippi","4245119","Briggs Bourgeois","kicking",7,8,15,15,36,53
-"96","Penn State","4361424","Jake Pinegar","kicking",4,6,21,20,32,48
-"97","Akron","5089443","Noah Perez","kicking",6,7,8,8,26,42
-"98","Indiana","4371971","Charles Campbell","kicking",9,11,13,13,40,51
-"99","Marshall","5082559","Rece Verhoff","kicking",5,7,19,18,33,38
-"100","New Mexico State","4872955","Carson Zilmer","kicking",0,1,0,0,0,0
-"101","Vanderbilt","4879629","Will Faris","kicking",0,0,1,1,1,0
-"102","Navy","4568548","Daniel Davies","kicking",7,8,9,9,30,46
-"103","Nevada","4685167","Matthew Killam","kicking",0,1,5,4,4,0
-"104","Oklahoma State","4696736","Tanner Brown","kicking",8,8,26,26,50,43
-"105","Ole Miss","5095403","Christian Schanefelt","kicking",0,0,2,2,2,0
-"106","Old Dominion","4912353","Ethan Sanchez","kicking",3,4,13,13,22,34
-"107","Hawai'i","4565772","Matthew Shipley","kicking",6,7,11,11,29,40
-"108","Colorado State","4575447","Cayden Camper","kicking",0,1,3,2,2,0
-"109","Liberty","4874450","Nick Brown","kicking",5,11,22,22,37,49
-"110","Ball State","4583754","Ben VonGunten","kicking",9,11,15,15,42,44
-"111","UNLV","4261652","Daniel Gutierrez","kicking",6,6,24,24,42,50
-"112","Alabama","4567104","Will Reichard","kicking",7,10,35,35,56,52
-"113","NC State","4361665","Christopher Dunn","kicking",11,11,20,20,53,53
-"114","Navy","4686182","Evan Warren","kicking",0,1,2,2,2,0
-"115","Illinois","4371944","Caleb Griffin","kicking",7,11,18,18,39,48
-"116","Temple","4692161","Rory Bell","kicking",0,2,10,10,10,0
-"117","Michigan","4372066","Jake Moody","kicking",9,12,30,30,57,52
-"118","Toledo","4401310","Thomas Cluckey","kicking",7,9,28,28,49,45
-"119","Houston","4362508","Bubba Baxa","kicking",9,13,18,17,44,37
-"120","Tennessee","4570570","Toby Wilson","kicking",0,0,2,2,2,0
-"121","Texas A&M","4879612","Randy Bond","kicking",5,6,9,9,24,46
-"122","Arizona","4697745","Tyler Loop","kicking",8,10,20,20,44,43
-"123","Georgia","4379410","Jack Podlesny","kicking",12,14,28,28,64,42
-"124","Illinois","4887280","Fabrizio Pinton","kicking",3,3,0,0,9,37
-"125","Army","4689818","Quinn Maretzki","kicking",2,3,18,18,24,33
-"126","Wake Forest","4643646","Matthew Dennis","kicking",10,11,29,29,59,46
-"127","South Florida","4571557","Spencer Shrader","kicking",4,6,18,18,30,49
-"128","Virginia Tech","4568474","Will Ross","kicking",8,9,13,12,36,49
-"129","Oklahoma","4692532","Zach Schmit","kicking",5,6,24,24,39,44
-"130","Clemson","5081441","Robert Gunn III","kicking",0,0,1,1,1,0
-"131","Kentucky","4259997","Matt Ruffolo","kicking",7,10,17,17,38,50
-"132","Iowa","4686887","Aaron Blom","kicking",1,3,1,1,4,46
-"133","Tulsa","4568656","Zack Long","kicking",7,10,25,25,46,44
-"134","Louisiana Monroe","4241402","Calum Sutherland","kicking",1,2,17,17,20,25
-"135","West Virginia","4362210","Casey Legg","kicking",8,8,19,19,43,38
-"136","Troy","4880385","Zach Long","kicking",0,0,1,1,1,0
-"137","Virginia","4871220","Will Bettridge","kicking",2,2,6,6,12,47
-"138","Texas Tech","4573434","Gino Garcia","kicking",0,1,6,6,6,0
-"139","Nebraska","4382696","Timmy Bleekrode","kicking",1,3,24,24,27,46
-"140","Utah","4684912","Jordan Noyes","kicking",6,7,30,30,48,43
-"141","Western Michigan","4912229","Palmer Domschke","kicking",6,7,13,12,30,42
+"95","Southern Mississippi","4245119","Briggs Bourgeois","kicking",7,8,17,17,38,53
+"96","New Mexico State","4872955","Carson Zilmer","kicking",0,1,0,0,0,0
+"97","Vanderbilt","4879629","Will Faris","kicking",0,0,1,1,1,0
+"98","Oklahoma State","4696736","Tanner Brown","kicking",12,12,30,30,66,52
+"99","New Mexico State","4872946","Brett Money","kicking",1,2,11,11,14,26
+"100","Ole Miss","5095403","Christian Schanefelt","kicking",0,0,2,2,2,0
+"101","Texas State","4576777","Seth Keller","kicking",6,7,18,18,36,37
+"102","Colorado State","4575447","Cayden Camper","kicking",0,1,3,2,2,0
+"103","UT San Antonio","4245202","Jared Sackett","kicking",8,11,30,30,54,49
+"104","UNLV","4261652","Daniel Gutierrez","kicking",6,6,25,25,43,50
+"105","Washington State","4569635","Dean Janikowski","kicking",6,8,21,21,39,38
+"106","NC State","4361665","Christopher Dunn","kicking",14,14,20,20,62,53
+"107","Navy","4686182","Evan Warren","kicking",0,1,2,2,2,0
+"108","USC","4875309","Denis Lynch","kicking",8,10,37,37,61,45
+"109","Illinois","4371944","Caleb Griffin","kicking",7,11,18,18,39,48
+"110","Temple","4692161","Rory Bell","kicking",0,2,10,10,10,0
+"111","Utah State","4259234","Connor Coles","kicking",6,8,15,15,33,50
+"112","Houston","4362508","Bubba Baxa","kicking",9,13,18,17,44,37
+"113","Tennessee","4570570","Toby Wilson","kicking",0,0,2,2,2,0
+"114","James Madison","4366638","Camden Wise","kicking",3,7,34,34,43,27
+"115","North Carolina","4688828","Noah Burnette","kicking",7,9,35,35,56,47
+"116","Texas A&M","4879612","Randy Bond","kicking",5,6,9,9,24,46
+"117","Northern Illinois","4374105","John Richardson","kicking",9,13,24,24,51,46
+"118","Army","4689818","Quinn Maretzki","kicking",2,3,24,24,30,33
+"119","Clemson","4360317","B.T. Potter","kicking",13,15,29,29,68,52
+"120","Hawai'i","4565772","Matthew Shipley","kicking",7,8,15,15,36,40
+"121","Wake Forest","4643646","Matthew Dennis","kicking",10,11,29,29,59,46
+"122","South Florida","4571557","Spencer Shrader","kicking",5,7,22,22,37,49
+"123","Virginia Tech","4568474","Will Ross","kicking",8,9,14,14,38,49
+"124","Georgia Southern","4568432","Alex Raynor","kicking",12,13,31,31,67,45
+"125","Michigan State","4575106","Ben Patton","kicking",0,1,5,5,5,0
+"126","Clemson","5081441","Robert Gunn III","kicking",0,0,1,1,1,0
+"127","Memphis","4259440","Christopher Howard","kicking",14,14,26,25,67,47
+"128","Kentucky","4259997","Matt Ruffolo","kicking",9,13,20,20,47,50
+"129","Iowa","4686887","Aaron Blom","kicking",1,3,1,1,4,46
+"130","Tulsa","4568656","Zack Long","kicking",7,10,25,25,46,44
+"131","BYU","4046653","Jake Oldroyd","kicking",5,10,22,22,37,45
+"132","West Virginia","4362210","Casey Legg","kicking",10,10,24,24,54,38
+"133","Troy","4880385","Zach Long","kicking",0,0,1,1,1,0
+"134","Virginia","4871220","Will Bettridge","kicking",2,2,6,6,12,47
+"135","Eastern Michigan","4886806","Jesus Gomez","kicking",6,8,25,25,43,46
+"136","TCU","4574573","Griffin Kell","kicking",5,5,29,27,42,47
+"137","Texas Tech","4573434","Gino Garcia","kicking",0,1,6,6,6,0
+"138","Oregon State","4892332","Atticus Sappington","kicking",5,7,10,9,24,40
+"139","Tennessee","4259641","Chase McGrath","kicking",9,11,34,33,60,51
+"140","Baylor","4373032","John Mayers","kicking",4,4,19,19,31,44
+"141","Bowling Green","4373432","Mason Lawler","kicking",4,6,21,21,33,45
 "142","Tulane","4584531","Graham Dable","kicking",0,0,1,1,1,0
 "143","Army","4879935","Trey Gronotte","kicking",0,0,1,1,1,0
-"144","Michigan State","4575106","Ben Patton","kicking",0,1,1,1,1,0
-"145","Utah State","4259234","Connor Coles","kicking",5,5,13,13,28,50
-"146","TCU","5092974","Luke Laminack","kicking",1,2,6,6,9,36
-"147","Memphis","4259440","Christopher Howard","kicking",11,11,22,21,54,47
-"148","Buffalo","4373452","Alex McNulty","kicking",11,12,20,20,53,52
-"149","Eastern Michigan","4886806","Jesus Gomez","kicking",5,6,24,24,39,42
-"150","Virginia","4568487","Brendan Farrell","kicking",4,8,6,5,17,42
-"151","Wake Forest","4256915","Zach Murphy","kicking",0,0,2,2,2,0
-"152","San José State","4875653","Taren Schive","kicking",8,12,17,16,40,43
-"153","North Carolina","4688828","Noah Burnette","kicking",6,7,30,30,48,47
-"154","Arizona State","4708051","Carter Brown","kicking",9,10,18,18,45,53
-"155","Coastal Carolina","4873011","Kade Hensley","kicking",5,7,27,27,42,48
+"144","TCU","5092974","Luke Laminack","kicking",1,2,6,6,9,36
+"145","Virginia","4568487","Brendan Farrell","kicking",4,8,6,5,17,42
+"146","Wake Forest","4256915","Zach Murphy","kicking",0,0,2,2,2,0
+"147","New Mexico","5082358","Luke Drzewiecki","kicking",4,6,4,4,16,44
+"148","Arizona State","4708051","Carter Brown","kicking",9,10,18,18,45,53
+"149","Notre Dame","4259619","Blake Grupe","kicking",5,6,15,15,30,47
+"150","LSU","4893639","Damian Ramos","kicking",4,6,29,29,41,47
+"151","Western Kentucky","4361765","Brayden Narveson","kicking",7,9,37,37,58,47
+"152","Liberty","5081712","Lawrence Brown","kicking",0,0,1,1,1,0
+"153","Georgia State","4568415","Michael Hayes","kicking",6,8,20,19,37,46
+"154","Coastal Carolina","4873011","Kade Hensley","kicking",5,8,30,30,45,48
+"155","Illinois","4887280","Fabrizio Pinton","kicking",7,7,2,2,23,37
 "156","East Carolina","4690345","Owen Daffer","kicking",5,8,25,20,35,32
-"157","Connecticut","4685066","Noe Ruelas","kicking",7,8,13,13,34,54
-"158","SMU","5084095","Collin Rogers","kicking",6,7,14,14,32,43
-"159","LSU","4893639","Damian Ramos","kicking",3,5,23,23,32,37
-"160","BYU","4046653","Jake Oldroyd","kicking",5,10,20,20,35,45
-"161","Middle Tennessee","4689969","Zeke Rankin","kicking",6,6,23,23,41,35
-"162","Cincinnati","4578233","Ryan Coe","kicking",4,7,31,31,43,39
-"163","Texas State","4879682","Mason Shipley","kicking",1,1,0,0,3,54
-"164","Stanford","4875315","Emmet Kenney","kicking",0,0,1,0,0,0
-"165","Notre Dame","4259619","Blake Grupe","kicking",5,6,13,13,28,47
-"166","Washington","4245287","Peyton Henry","kicking",9,9,27,27,54,50
-"167","Oregon State","4570473","Everett Hayes","kicking",2,5,14,13,19,23
-"168","Pittsburgh","4566158","Ben Sauls","kicking",7,10,27,27,48,48
-"169","South Carolina","4607894","Mitch Jeter","kicking",6,6,16,15,33,53
-"170","Georgia Tech","4691736","Gavin Stewart","kicking",7,7,4,4,25,40
-"171","New Mexico State","4872946","Brett Money","kicking",1,1,8,8,11,26
-"172","Wisconsin","4685641","Vito Calvaruso","kicking",1,3,7,7,10,28
-"173","Duke","4429736","Charlie Ham","kicking",9,14,24,24,51,45
-"174","Clemson","4360317","B.T. Potter","kicking",11,13,25,25,58,52
-"175","NC State","4568323","Collin Smith","kicking",1,2,1,1,4,40
-"176","Georgia Southern","4568432","Alex Raynor","kicking",7,7,24,24,45,45
-"177","Michigan","4878684","Rhett Andersen","kicking",0,0,1,1,1,0
-"178","Nevada","4569088","Brandon Talton","kicking",6,7,12,12,30,50
-"179","Northwestern","4696479","Adam Stage","kicking",3,5,12,12,21,35
-"180","Kent State","5082971","Johan Silver","kicking",0,0,3,3,3,0
-"181","Georgia Tech","4691742","Jude Kelley","kicking",2,6,7,7,13,45
-"182","BYU","4687464","Justen Smith","kicking",1,1,3,2,5,25
-"183","Northern Illinois","4374105","John Richardson","kicking",5,9,21,21,36,46
-"184","Houston","4567491","Kyle Ramsey","kicking",0,0,2,2,2,0
-"185","Temple","4373235","Camden Price","kicking",1,1,0,0,3,47
-"186","Rice","4248291","Christian VanSickle","kicking",5,5,17,17,32,43
-"187","Colorado","4699353","Cole Becker","kicking",4,5,8,7,19,43
-"188","SMU","4687040","Brendan Hall","kicking",1,1,0,0,3,32
-"189","Texas A&M","4570688","Caden Davis","kicking",1,3,6,6,9,40
-"190","Louisville","4575529","James Turner","kicking",9,10,19,19,46,48
-"191","Central Michigan","4880189","Josh Rolston","kicking",0,1,4,3,3,0
-"192","Michigan State","4869421","Jack Stone","kicking",1,3,16,15,18,43
-"193","Stanford","4566192","Joshua Karty","kicking",4,4,17,17,29,53
-"194","Missouri","4574716","Harrison Mevis","kicking",11,14,16,16,49,56
-"195","Kansas State","4708850","Chris Tennant","kicking",9,12,19,18,45,37
-"196","LSU","4569606","Trey Finison","kicking",0,0,1,1,1,0
+"157","Georgia","4379410","Jack Podlesny","kicking",14,16,35,35,77,42
+"158","Akron","5089443","Noah Perez","kicking",6,9,11,11,29,42
+"159","Troy","4259576","Brooks Buce","kicking",10,11,18,18,48,48
+"160","Colorado","4699353","Cole Becker","kicking",6,7,10,9,27,43
+"161","Florida Atlantic","4691984","Morgan Suarez","kicking",7,10,25,25,46,43
+"162","East Carolina","5082102","Andrew Conrad","kicking",1,1,4,4,7,22
+"163","Maryland","4363538","Chad Ryland","kicking",9,12,27,27,54,53
+"164","Cincinnati","4578233","Ryan Coe","kicking",4,7,31,31,43,39
+"165","Texas State","4879682","Mason Shipley","kicking",1,1,0,0,3,54
+"166","Nebraska","4382696","Timmy Bleekrode","kicking",4,6,28,28,40,46
+"167","Stanford","4875315","Emmet Kenney","kicking",0,0,1,0,0,0
+"168","Utah","4569555","Jadon Redding","kicking",0,0,5,5,5,0
+"169","Rice","4248291","Christian VanSickle","kicking",5,5,19,19,34,43
+"170","Navy","4568548","Daniel Davies","kicking",7,9,13,13,34,46
+"171","Oklahoma","4692532","Zach Schmit","kicking",6,7,31,31,49,44
+"172","Oregon State","4570473","Everett Hayes","kicking",2,5,14,13,19,23
+"173","Pittsburgh","4566158","Ben Sauls","kicking",7,10,27,27,48,48
+"174","South Carolina","4607894","Mitch Jeter","kicking",6,6,16,15,33,53
+"175","BYU","4687464","Justen Smith","kicking",1,1,5,3,6,25
+"176","Georgia Tech","4691736","Gavin Stewart","kicking",7,7,4,4,25,40
+"177","Ohio","4912197","Nathanial Vakos","kicking",10,11,27,26,56,55
+"178","Wisconsin","4685641","Vito Calvaruso","kicking",1,3,7,7,10,28
+"179","NC State","4568323","Collin Smith","kicking",1,2,1,1,4,40
+"180","Michigan","4878684","Rhett Andersen","kicking",0,0,1,1,1,0
+"181","Arizona","4697745","Tyler Loop","kicking",9,12,24,24,51,48
+"182","Nevada","4569088","Brandon Talton","kicking",6,7,12,12,30,50
+"183","Utah","4684912","Jordan Noyes","kicking",6,8,30,30,48,43
+"184","Northwestern","4696479","Adam Stage","kicking",3,5,12,12,21,35
+"185","Kent State","5082971","Johan Silver","kicking",0,0,3,3,3,0
+"186","Georgia Tech","4691742","Jude Kelley","kicking",2,6,7,7,13,45
+"187","Kansas","4429098","Jacob Borcila","kicking",3,6,38,38,47,40
+"188","UCF","5085396","Colton Boomer","kicking",7,7,20,19,40,43
+"189","Houston","4567491","Kyle Ramsey","kicking",0,0,2,2,2,0
+"190","Central Michigan","4695678","Marshall Meeder","kicking",2,7,12,11,17,48
+"191","SMU","4687040","Brendan Hall","kicking",1,1,0,0,3,32
+"192","Texas A&M","4570688","Caden Davis","kicking",1,3,6,6,9,40
+"193","Louisville","4575529","James Turner","kicking",9,10,19,19,46,48
+"194","Mississippi State","4361040","Massimo Biscardi","kicking",1,1,11,9,12,48
+"195","San José State","4875653","Taren Schive","kicking",9,14,18,17,44,43
+"196","Michigan State","4869421","Jack Stone","kicking",1,3,16,15,18,43
+"197","Louisiana","4373653","Kenneth Almendares","kicking",4,6,4,4,16,52
+"198","Missouri","4574716","Harrison Mevis","kicking",11,14,16,16,49,56
+"199","Kansas State","4708850","Chris Tennant","kicking",9,12,19,18,45,37
+"200","LSU","4569606","Trey Finison","kicking",0,0,1,1,1,0
+"201","Stanford","4566192","Joshua Karty","kicking",7,7,18,18,39,53
+"202","Iowa State","4917269","Jace Gilbert","kicking",9,13,16,16,43,44

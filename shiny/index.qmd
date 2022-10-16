@@ -5,7 +5,7 @@ server: shiny
 ---
 
 :::{.callout-note}
-Last updated to include games through: `October 8, 2022`.
+Last updated to include games through: `October 15, 2022`.
 :::
 
 ```{r setup}
@@ -18,7 +18,7 @@ library(stringr)
 library(tidyverse)
 
 # load data
-fgs_clean <- read_csv('fgs_10092022.csv')
+fgs_clean <- read_csv('fgs_10162022.csv')
 team_info <- readRDS("team_info.RDS")
 xp_player <- read_csv('ck_xp.csv')
 team_stats <- read_csv('team_stats.csv')
